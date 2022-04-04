@@ -1,0 +1,44 @@
+@import "../../styles/variable.scss";
+
+.footer {
+  width: 100%;
+  height: 64px;
+  justify-content: center;
+
+  &-wrapper {
+    align-items: center;
+    justify-content: space-between;
+
+    & > span {
+      color: $pink;
+      font-size: 1rem;
+      font-weight: bold;
+
+      @media (max-width: 768px) {
+        font-size: 0.875rem;
+      }
+    }
+
+    & > div {
+      align-items: center;
+      column-gap: 16px;
+
+      & > a {
+        width: 24px;
+        height: 24px;
+        color: $purple;
+        transition: 0.3s;
+
+        &:hover {
+          color: $green;
+        }
+
+        & > svg {
+          width: 100%;
+          height: auto;
+          height: intrinsic;
+        }
+      }
+    }
+  }
+}

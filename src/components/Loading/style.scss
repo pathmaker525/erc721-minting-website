@@ -1,0 +1,28 @@
+@import "../../styles/variable.scss";
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  &-wrapper {
+    align-items: center;
+    justify-content: center;
+    row-gap: 24px;
+
+    & > svg {
+      width: 128px;
+      height: auto;
+      height: intrinsic;
+      color: $green;
+      animation: spin 9s linear 0s infinite;
+    }
+
+    & > img {
+      width: 240px;
+      height: auto;
+      height: intrinsic;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../styles/variable.scss";
+
+.navbar {
+  padding: 24px 0 0;
+  width: 100%;
+  height: 64px;
+  justify-content: center;
+  z-index: 99;
+
+  &-wrapper {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    & > img {
+      height: 100%;
+    }
+  }
+}
