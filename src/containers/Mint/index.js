@@ -7,7 +7,7 @@ import { ethers } from "ethers"
 import connectors from "configs/Wallets"
 
 import {
-  getCurrentTotalSupply,
+  // getCurrentTotalSupply,
   // getMaxSupply,
   getCurrentMaxMint,
   getMaxMintingSupply,
@@ -27,8 +27,8 @@ const Mint = () => {
   const [mintCount, setMintCount] = useState(1)
   const [txStatus, setTxStatus] = useState("")
 
-  const [totalSupply, setTotalSupply] = useState(0)
-  const [maxSupply, setMaxSupply] = useState(3353)
+  // const [totalSupply, setTotalSupply] = useState(0)
+  const [maxSupply, setMaxSupply] = useState(1000)
   const [maxMint, setMaxMint] = useState(1)
   const [mintPrice, setMintPrice] = useState(0)
 
@@ -39,8 +39,8 @@ const Mint = () => {
       }, 5000)
 
       if (!!account) {
-        let totalSupply = await getCurrentTotalSupply(library, account)
-        setTotalSupply(totalSupply)
+        // let totalSupply = await getCurrentTotalSupply(library, account)
+        // setTotalSupply(totalSupply)
 
         let mintMax = await getCurrentMaxMint(library, account)
         setMaxMint(mintMax)
@@ -143,7 +143,7 @@ const Mint = () => {
     <MintComponent
       account={account}
       mintCount={mintCount}
-      ticker={totalSupply}
+      // ticker={totalSupply}
       mintPrice={mintPrice}
       walletConfig={connectors[0]}
       connector={login}

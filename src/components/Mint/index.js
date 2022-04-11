@@ -7,7 +7,7 @@ import "./style.scss"
 const Mint = ({
   account,
   mintCount,
-  ticker,
+  // ticker,
   mintPrice,
   walletConfig,
   connector,
@@ -32,7 +32,7 @@ const Mint = ({
               )}...${account.slice(-4)}`}</span>
             </div>
             <h3>Get your Shmurfs</h3>
-            <span className="mint-ticker">
+            {/* <span className="mint-ticker">
               {ticker < 500
                 ? "😎 Go Go Go Fam 😎"
                 : ticker < 1500
@@ -44,7 +44,7 @@ const Mint = ({
                 : ticker === 3353
                 ? "🎉 Sold out! 🎉"
                 : "🤔 Unknown Status 🤔"}
-            </span>
+            </span> */}
             <span className="mint-price">
               {(mintPrice * mintCount) / 10000} ETH
             </span>

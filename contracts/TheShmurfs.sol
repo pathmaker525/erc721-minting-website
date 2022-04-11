@@ -13,7 +13,7 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./ERC721A.sol";
 
-contract ShmurfsTest is Ownable, ERC721A {
+contract Shmurfs is Ownable, ERC721A {
 
   enum Step {
     Before,
@@ -40,7 +40,7 @@ contract ShmurfsTest is Ownable, ERC721A {
 
   mapping(address => uint8) private whitelistBuyList;
 
-  constructor() ERC721A("Shmurfs-Test", "SMTS") {
+  constructor() ERC721A("The Shmurfs", "SHMURFS") {
     sellingStep = Step.Before;
     revealed = false;
   }
@@ -140,5 +140,14 @@ contract ShmurfsTest is Ownable, ERC721A {
     if (msg.value > price) {
       payable(msg.sender).transfer(msg.value - price);
     }
+  }
+
+  function getPrice() public view returns (uint) {
+    require(sellingStep != Step.Before, "Sale not started yet");
+    require(sellingStep != Step.After, "Sale ended");
+    if (sellingStep == Step.PublicSale)
+      return PRICE_PUBLIC;
+    else
+      return PRICE_WHITELIST;
   }
 }
