@@ -51,7 +51,7 @@ const WLMint = ({
             </span>
             <div className="mint-passkey">
               <label>Passkey: &nbsp;</label>
-              <input type="text" onChange={(e) => {
+              <input type="number" onChange={(e) => {
                 setPassKey(e.target.value)
               }} />
             </div>
