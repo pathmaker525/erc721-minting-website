@@ -1,0 +1,140 @@
+@import "../../styles/variable.scss";
+
+.mint {
+  width: 100%;
+  min-height: calc(100vh - 128px);
+  justify-content: center;
+
+  &-wrapper {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-main {
+    width: 100%;
+    max-width: 520px;
+    padding: 24px;
+    align-items: center;
+
+    & > img {
+      width: 100%;
+    }
+
+    & > h3 {
+      color: $orange;
+    }
+  }
+
+  &-disconnect {
+    margin-top: 16px;
+    align-items: center;
+    column-gap: 24px;
+
+    & > button {
+      height: 28px;
+      border: none;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 0 16px;
+      background-image: linear-gradient(135deg, $orange, $pink);
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-image: linear-gradient(135deg, $pink, $orange);
+      }
+    }
+
+    & > span {
+      color: $green;
+      font-size: 12px;
+      text-align: center;
+      font-weight: bold;
+      padding: 8px;
+      background-color: rgba($color: $green, $alpha: 0.1);
+    }
+  }
+
+  &-ticker {
+    margin-bottom: 12px;
+    font-size: 24px;
+    color: $blue;
+  }
+
+  &-price {
+    color: $blue;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  &-passkey {
+    align-items: center;
+    column-gap: 12px;
+    margin-bottom: 10px;
+    & > label {
+      font-size: 20px;
+      color: $blue;
+    }
+    & > input {
+      width: 120px;
+      background-color: $black;
+      color: $blue;
+      border: 1px solid rgba($color: $gray, $alpha: 0.1);
+      padding: 8px;
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+  &-counter {
+    align-items: center;
+    column-gap: 12px;
+
+    & > svg {
+      width: 36px;
+      height: auto;
+      height: intrinsic;
+      color: $gray;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: $green;
+      }
+    }
+
+    & > input {
+      width: 120px;
+      background-color: $black;
+      color: $blue;
+      border: 1px solid rgba($color: $gray, $alpha: 0.1);
+      padding: 8px;
+      font-size: 24px;
+      text-align: center;
+      font-weight: bolder;
+    }
+  }
+
+  &-button {
+    width: 100%;
+    margin-top: 24px;
+
+    & > button {
+      width: 100%;
+      height: 100%;
+      height: 48px;
+      font-size: 16px;
+      font-weight: bold;
+      color: $black;
+      border: none;
+      background-image: linear-gradient(135deg, $green, $purple);
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-image: linear-gradient(135deg, $purple, $green);
+      }
+    }
+  }
+}

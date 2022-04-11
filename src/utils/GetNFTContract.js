@@ -111,7 +111,7 @@ export const mintNFT = async (
   alertInfo,
   alertSuccess,
   alertError,
-  mintCount
+  mintCount,
 ) => {
   const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
@@ -125,6 +125,44 @@ export const mintNFT = async (
 
   try {
     let txhash = await contract.publicSaleMint(mintCount, {
+      value: ethers.BigNumber.from(price).mul(1e14).mul(mintCount),
+      from: account,
+    })
+
+    alertInfo("Tx Submitted")
+    let res = await txhash.wait()
+
+    if (res.transactionHash) {
+      alertSuccess("Successfully Minted")
+    } else {
+      alertError("Tx Failed")
+    }
+  } catch (err) {
+    alertError(err.message)
+  }
+}
+
+export const wlMintNFT = async (
+  library,
+  account,
+  alertInfo,
+  alertSuccess,
+  alertError,
+  mintCount,
+  passKey
+) => {
+  const contract = getTheShmurfsContract(
+    getProviderOrSigner(library, account)
+  )
+
+  let price = await getPrice(library, account)
+  console.log(
+    ethers.BigNumber.from(price).mul(1e14).mul(mintCount).toString(),
+    mintCount
+  )
+
+  try {
+    var txhash = await contract.whitelistMint(mintCount, passKey, {
       value: ethers.BigNumber.from(price).mul(1e14).mul(mintCount),
       from: account,
     })

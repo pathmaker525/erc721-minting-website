@@ -13,12 +13,12 @@ import {
   getMaxMintingSupply,
   getOccupiedIds,
   getPrice,
-  mintNFT,
+  wlMintNFT
 } from "utils/GetNFTContract"
 
-import MintComponent from "components/Mint"
+import WLMintComponent from "components/WLMint"
 
-const Mint = () => {
+const WLMint = () => {
   const { library, account } = useWeb3React()
   const { login, logout } = useAuth()
   const alert = useAlert()
@@ -29,8 +29,9 @@ const Mint = () => {
 
   // const [totalSupply, setTotalSupply] = useState(0)
   const [maxSupply, setMaxSupply] = useState(1000)
-  // const [maxMint, setMaxMint] = useState(1)
+  const [maxMint] = useState(3)
   const [mintPrice, setMintPrice] = useState(0)
+  const [passKey, setPassKey] = useState("0")
 
   useEffect(() => {
     const fetchData = async () => {
@@ -114,7 +115,7 @@ const Mint = () => {
   // }
 
   const onIncreaseMintCount = () => {
-    // if (mintCount < maxMint) 
+    if (mintCount < maxMint) 
     setMintCount(mintCount + 1)
   }
 
@@ -129,19 +130,20 @@ const Mint = () => {
       // const randomIds = await getRandomIds()
       // console.log(randomIds)
 
-      await mintNFT(
+      await wlMintNFT(
         library,
         account,
         alertInfo,
         alertSuccess,
         alertError,
         mintCount,
+        passKey
       )
     }
   }
 
   return (
-    <MintComponent
+    <WLMintComponent
       account={account}
       mintCount={mintCount}
       // ticker={totalSupply}
@@ -151,9 +153,10 @@ const Mint = () => {
       disconnector={logout}
       onIncreaseMintCount={onIncreaseMintCount}
       onDecreaseMintCount={onDecreaseMintCount}
+      setPassKey={setPassKey}
       onMint={onMint}
     />
   )
 }
 
-export default Mint
+export default WLMint
