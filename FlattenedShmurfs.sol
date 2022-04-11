@@ -1273,7 +1273,7 @@ contract ERC721A is Context, ERC165, IERC721, IERC721Metadata {
 pragma solidity ^0.8.4;
 
 
-contract Shmurfs is Ownable, ERC721A {
+contract TheShmurfs is Ownable, ERC721A {
 
   enum Step {
     Before,

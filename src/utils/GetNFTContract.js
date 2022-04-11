@@ -111,7 +111,7 @@ export const mintNFT = async (
   alertInfo,
   alertSuccess,
   alertError,
-  randomIds
+  mintCount
 ) => {
   const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
@@ -119,13 +119,13 @@ export const mintNFT = async (
 
   let price = await getPrice(library, account)
   console.log(
-    ethers.BigNumber.from(price).mul(1e14).mul(randomIds.length).toString(),
-    randomIds.length
+    ethers.BigNumber.from(price).mul(1e14).mul(mintCount).toString(),
+    mintCount
   )
 
   try {
-    let txhash = await contract.mint(account, randomIds, {
-      value: ethers.BigNumber.from(price).mul(1e14).mul(randomIds.length),
+    let txhash = await contract.publicSaleMint(mintCount, {
+      value: ethers.BigNumber.from(price).mul(1e14).mul(mintCount),
       from: account,
     })
 

@@ -29,7 +29,7 @@ const Mint = () => {
 
   // const [totalSupply, setTotalSupply] = useState(0)
   const [maxSupply, setMaxSupply] = useState(1000)
-  const [maxMint, setMaxMint] = useState(1)
+  // const [maxMint, setMaxMint] = useState(1)
   const [mintPrice, setMintPrice] = useState(0)
 
   useEffect(() => {
@@ -42,8 +42,8 @@ const Mint = () => {
         // let totalSupply = await getCurrentTotalSupply(library, account)
         // setTotalSupply(totalSupply)
 
-        let mintMax = await getCurrentMaxMint(library, account)
-        setMaxMint(mintMax)
+        // let mintMax = await getCurrentMaxMint(library, account)
+        // setMaxMint(mintMax)
 
         let maxSupply = await getMaxMintingSupply(library, account)
         setMaxSupply(maxSupply)
@@ -98,23 +98,24 @@ const Mint = () => {
     })
   }
 
-  const getRandomIds = async () => {
-    let customIds = []
-    const baseIds = generateInitIds()
-    const occupied = await getOccupiedIds(library, account)
-    const diffIds = getDiffArray(baseIds, occupied)
+  // const getRandomIds = async () => {
+  //   let customIds = []
+  //   const baseIds = generateInitIds()
+  //   const occupied = await getOccupiedIds(library, account)
+  //   const diffIds = getDiffArray(baseIds, occupied)
 
-    while (customIds.length < Number(mintCount)) {
-      const id = Math.floor(Math.random() * diffIds.length)
-      const index = diffIds[id]
-      customIds.push(index)
-    }
+  //   while (customIds.length < Number(mintCount)) {
+  //     const id = Math.floor(Math.random() * diffIds.length)
+  //     const index = diffIds[id]
+  //     customIds.push(index)
+  //   }
 
-    return customIds
-  }
+  //   return customIds
+  // }
 
   const onIncreaseMintCount = () => {
-    if (mintCount < maxMint) setMintCount(mintCount + 1)
+    // if (mintCount < maxMint) 
+    setMintCount(mintCount + 1)
   }
 
   const onDecreaseMintCount = () => {
@@ -125,8 +126,8 @@ const Mint = () => {
 
   const onMint = async () => {
     if (txStatus !== "Pending" && !!account) {
-      const randomIds = await getRandomIds()
-      console.log(randomIds)
+      // const randomIds = await getRandomIds()
+      // console.log(randomIds)
 
       await mintNFT(
         library,
@@ -134,7 +135,7 @@ const Mint = () => {
         alertInfo,
         alertSuccess,
         alertError,
-        randomIds
+        mintCount
       )
     }
   }

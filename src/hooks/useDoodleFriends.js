@@ -3,7 +3,7 @@ import useSWR from "swr"
 
 import { getProviderOrSigner } from "utils/index"
 import getNFTContract from "utils/GetContractInfo"
-import contractAbi from "abis/ShmurfsTest.json"
+import contractAbi from "abis/TheShmurfs.json"
 import useActiveWeb3React from "./useActiveWeb3React"
 
 const fetcher =

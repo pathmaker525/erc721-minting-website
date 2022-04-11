@@ -13,7 +13,7 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./ERC721A.sol";
 
-contract Shmurfs is Ownable, ERC721A {
+contract TheShmurfs is Ownable, ERC721A {
 
   enum Step {
     Before,
