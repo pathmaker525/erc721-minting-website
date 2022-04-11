@@ -9,7 +9,7 @@ export const contractAddresses = {
       "https://etherscan.io/token/0x7b9C9C846a5a9ADaAab0B6cc224f9AF47405F721",
   },
   [ETH_TESTNET]: {
-    address: "0x6aB606B1C13D37DF6548f55cb1B333bEF86FCBD5",
+    address: "0x83dc0ce75d04cb3029b318effe9f741a01949acd",
     explorerUrl:
       "https://rinkeby.etherscan.io/token/0x30C4Df9E5323B1844bA91573B4966E7Af9A93683",
   },
