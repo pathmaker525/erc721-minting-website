@@ -1,10 +1,10 @@
 import { ethers } from "ethers"
-import { getDoodleFriendsContract } from "./GetContractInstances"
+import { getTheShmurfsContract } from "./GetContractInstances"
 import { getProviderOrSigner } from "utils/index"
 
 // Get Current Total Supply from the Contract
 export const getCurrentTotalSupply = async (library, account) => {
-  const contract = getDoodleFriendsContract(
+  const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 
@@ -19,7 +19,7 @@ export const getCurrentTotalSupply = async (library, account) => {
 
 // Get Max Supply from the Contract
 export const getMaxSupply = async (library, account) => {
-  const contract = getDoodleFriendsContract(
+  const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 
@@ -34,7 +34,7 @@ export const getMaxSupply = async (library, account) => {
 
 // Get Max Mintable Counts per Click from the Contract
 export const getCurrentMaxMint = async (library, account) => {
-  const contract = getDoodleFriendsContract(
+  const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 
@@ -49,7 +49,7 @@ export const getCurrentMaxMint = async (library, account) => {
 
 // Get Max Mintable Counts per Click from the Contract
 export const getMaxMintingSupply = async (library, account) => {
-  const contract = getDoodleFriendsContract(
+  const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 
@@ -63,7 +63,7 @@ export const getMaxMintingSupply = async (library, account) => {
 }
 
 export const getOccupiedIds = async (library, account) => {
-  const contract = getDoodleFriendsContract(
+  const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 
@@ -77,7 +77,7 @@ export const getOccupiedIds = async (library, account) => {
 }
 
 export const getPrice = async (library, account) => {
-  const contract = getDoodleFriendsContract(
+  const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 
@@ -92,7 +92,7 @@ export const getPrice = async (library, account) => {
 }
 
 export const getOwnerAddress = async (library, account) => {
-  const contract = getDoodleFriendsContract(
+  const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 
@@ -113,7 +113,7 @@ export const mintNFT = async (
   alertError,
   randomIds
 ) => {
-  const contract = getDoodleFriendsContract(
+  const contract = getTheShmurfsContract(
     getProviderOrSigner(library, account)
   )
 

@@ -6,7 +6,7 @@ import "./style.scss"
 const Footer = () => (
   <div className="footer flex">
     <div className="footer-wrapper container flex">
-      <span>Doodle Friends © 2022</span>
+      <span>The Shmurfs © 2022</span>
       <div className="footer-socials flex">
         <a
           className="flex"

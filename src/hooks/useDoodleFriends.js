@@ -3,7 +3,7 @@ import useSWR from "swr"
 
 import { getProviderOrSigner } from "utils/index"
 import getNFTContract from "utils/GetContractInfo"
-import contractAbi from "abis/DoodleFriends.json"
+import contractAbi from "abis/ShmurfsTest.json"
 import useActiveWeb3React from "./useActiveWeb3React"
 
 const fetcher =
@@ -25,7 +25,7 @@ const fetcher =
     return contract[method](arg3, ...params)
   }
 
-const useDoodleFriendsFeatures = (method, ...args) => {
+const useTheShmurfsFeatures = (method, ...args) => {
   const { library, account } = useActiveWeb3React()
 
   const { data: response, mutate } = useSWR(
@@ -38,4 +38,4 @@ const useDoodleFriendsFeatures = (method, ...args) => {
   return { response, mutate }
 }
 
-export default useDoodleFriendsFeatures
+export default useTheShmurfsFeatures
