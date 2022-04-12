@@ -17,7 +17,7 @@ const Footer = () => (
         >
           <SiTwitter />
         </a>
-        <a
+        {/* <a
           className="flex"
           href={SocialLinks.Instagram}
           target="_blank"
@@ -25,7 +25,7 @@ const Footer = () => (
           aria-label="twitter"
         >
           <SiInstagram />
-        </a>
+        </a> */}
         <a
           className="flex"
           href={SocialLinks.Discord}
@@ -35,7 +35,7 @@ const Footer = () => (
         >
           <SiDiscord />
         </a>
-        <a
+        {/* <a
           className="flex"
           href={SocialLinks.Medium}
           target="_blank"
@@ -43,7 +43,7 @@ const Footer = () => (
           aria-label="twitter"
         >
           <SiMedium />
-        </a>
+        </a> */}
       </div>
     </div>
   </div>
