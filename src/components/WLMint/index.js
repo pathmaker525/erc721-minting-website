@@ -14,7 +14,6 @@ const WLMint = ({
   disconnector,
   onIncreaseMintCount,
   onDecreaseMintCount,
-  setPassKey,
   onMint,
 }) => (
   <div className="mint flex">
@@ -49,12 +48,6 @@ const WLMint = ({
             <span className="mint-price">
               {(mintPrice * mintCount) / 10000} ETH
             </span>
-            <div className="mint-passkey">
-              <label>Passkey: &nbsp;</label>
-              <input type="number" onChange={(e) => {
-                setPassKey(e.target.value)
-              }} />
-            </div>
             <div className="mint-counter flex">
               <FiMinusCircle onClick={onDecreaseMintCount} />
               <input

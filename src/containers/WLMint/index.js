@@ -12,7 +12,7 @@ import {
   // getMaxMintingSupply,
   // getOccupiedIds,
   getPrice,
-  wlMintNFT
+  mintNFT
 } from "utils/GetNFTContract"
 
 import WLMintComponent from "components/WLMint"
@@ -29,7 +29,6 @@ const WLMint = () => {
   // const [maxSupply, setMaxSupply] = useState(1000)
   const [maxMint] = useState(3)
   const [mintPrice, setMintPrice] = useState(0)
-  const [passKey, setPassKey] = useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -124,14 +123,14 @@ const WLMint = () => {
       // const randomIds = await getRandomIds()
       // console.log(randomIds)
 
-      await wlMintNFT(
+      await mintNFT(
         library,
         account,
         alertInfo,
         alertSuccess,
         alertError,
         mintCount,
-        passKey
+        false
       )
     }
   }
@@ -147,7 +146,6 @@ const WLMint = () => {
       disconnector={logout}
       onIncreaseMintCount={onIncreaseMintCount}
       onDecreaseMintCount={onDecreaseMintCount}
-      setPassKey={setPassKey}
       onMint={onMint}
     />
   )

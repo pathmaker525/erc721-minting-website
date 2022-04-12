@@ -131,6 +131,7 @@ const Mint = () => {
         alertSuccess,
         alertError,
         mintCount,
+        true
       )
     }
   }

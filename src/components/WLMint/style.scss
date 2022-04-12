@@ -68,25 +68,6 @@
     margin-bottom: 12px;
   }
 
-  &-passkey {
-    align-items: center;
-    column-gap: 12px;
-    margin-bottom: 10px;
-    & > label {
-      font-size: 20px;
-      color: $blue;
-    }
-    & > input {
-      width: 120px;
-      background-color: $black;
-      color: $blue;
-      border: 1px solid rgba($color: $gray, $alpha: 0.1);
-      padding: 8px;
-      font-size: 24px;
-      text-align: center;
-    }
-  }
-
   &-counter {
     align-items: center;
     column-gap: 12px;
