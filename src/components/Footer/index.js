@@ -1,4 +1,9 @@
-import { SiTwitter, SiInstagram, SiDiscord, SiMedium } from "react-icons/si"
+import {
+  SiTwitter,
+  // SiInstagram,
+  SiDiscord,
+  // SiMedium
+} from "react-icons/si"
 import SocialLinks from "constants/Ui/SocialLinks"
 
 import "./style.scss"

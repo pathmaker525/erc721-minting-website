@@ -2,16 +2,15 @@ import { useState, useEffect } from "react"
 import useAuth from "hooks/useAuth"
 import { useWeb3React } from "@web3-react/core"
 import { useAlert } from "react-alert"
-import { ethers } from "ethers"
 
 import connectors from "configs/Wallets"
 
 import {
   // getCurrentTotalSupply,
   // getMaxSupply,
-  getCurrentMaxMint,
-  getMaxMintingSupply,
-  getOccupiedIds,
+  // getCurrentMaxMint,
+  // getMaxMintingSupply,
+  // getOccupiedIds,
   getPrice,
   wlMintNFT
 } from "utils/GetNFTContract"
@@ -23,22 +22,17 @@ const WLMint = () => {
   const { login, logout } = useAuth()
   const alert = useAlert()
 
-  const [timeLeft, setTimeLeft] = useState(0)
   const [mintCount, setMintCount] = useState(1)
   const [txStatus, setTxStatus] = useState("")
 
   // const [totalSupply, setTotalSupply] = useState(0)
-  const [maxSupply, setMaxSupply] = useState(1000)
+  // const [maxSupply, setMaxSupply] = useState(1000)
   const [maxMint] = useState(3)
   const [mintPrice, setMintPrice] = useState(0)
   const [passKey, setPassKey] = useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
-      const timer = setTimeout(() => {
-        setTimeLeft(timeLeft + 1)
-      }, 5000)
-
       if (!!account) {
         // let totalSupply = await getCurrentTotalSupply(library, account)
         // setTotalSupply(totalSupply)
@@ -46,8 +40,8 @@ const WLMint = () => {
         // let mintMax = await getCurrentMaxMint(library, account)
         // setMaxMint(mintMax)
 
-        let maxSupply = await getMaxMintingSupply(library, account)
-        setMaxSupply(maxSupply)
+        // let maxSupply = await getMaxMintingSupply(library, account)
+        // setMaxSupply(maxSupply)
 
         let mintPrice = await getPrice(library, account)
         setMintPrice(mintPrice)
@@ -55,7 +49,7 @@ const WLMint = () => {
     }
 
     fetchData()
-  }, [library, account, timeLeft])
+  }, [library, account])
 
   const alertInfo = (message) =>
     alert.info(message, {
@@ -78,15 +72,15 @@ const WLMint = () => {
       },
     })
 
-  const generateInitIds = () => {
-    let initIds = []
+  // const generateInitIds = () => {
+  //   let initIds = []
 
-    for (let i = 0; i < maxSupply; i++) {
-      initIds.push(i + 1)
-    }
+  //   for (let i = 0; i < maxSupply; i++) {
+  //     initIds.push(i + 1)
+  //   }
 
-    return initIds
-  }
+  //   return initIds
+  // }
 
   // const getDiffArray = (source, target) => {
   //   return source.filter((index) => {
