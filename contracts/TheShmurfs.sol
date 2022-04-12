@@ -8,9 +8,10 @@
 //     | $$   | $$  | $$| $$_____/       /$$  \ $$| $$  | $$| $$ | $$ | $$| $$  | $$| $$      | $$     \____  $$      | $$  | $$| $$      | $$      | $$| $$      | $$ /$$__  $$| $$      | $$    $$| $$  | $$| $$| $$| $$_____/| $$        | $$ /$$| $$| $$  | $$| $$  | $$
 //     | $$   | $$  | $$|  $$$$$$$      |  $$$$$$/| $$  | $$| $$ | $$ | $$|  $$$$$$/| $$      | $$     /$$$$$$$/      |  $$$$$$/| $$      | $$      | $$|  $$$$$$$| $$|  $$$$$$$| $$      |  $$$$$$/|  $$$$$$/| $$| $$|  $$$$$$$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$
 //     |__/   |__/  |__/ \_______/       \______/ |__/  |__/|__/ |__/ |__/ \______/ |__/      |__/    |_______/        \______/ |__/      |__/      |__/ \_______/|__/ \_______/|__/       \______/  \______/ |__/|__/ \_______/ \_______/   \___/  |__/ \______/ |__/  |__/
-//                                                                                                                                                                                                                                                                          
-//                                                                                                                                                                                                                                                                          
-//                                                                                                                                                                                                                                                                          
+//
+//    The Shmurfs are a collection of 1,000, 3D amazing PFP NFT's that offer real long term value
+//
+//
 
 pragma solidity ^0.8.4;
 
@@ -20,10 +21,9 @@ import "./ERC721A.sol";
 contract TheShmurfs is Ownable, ERC721A {
 
   enum Step {
-    Before,
+    Inactive,
     WhitelistSale,
-    PublicSale,
-    After
+    PublicSale
   }
 
   Step public sellingStep;
@@ -43,7 +43,7 @@ contract TheShmurfs is Ownable, ERC721A {
   mapping(address => uint8) private whitelistBuyList;
 
   constructor() ERC721A("The Shmurfs Official Collection", "SHMURFS") {
-    sellingStep = Step.Before;
+    sellingStep = Step.Inactive;
     revealed = false;
   }
 
@@ -83,8 +83,8 @@ contract TheShmurfs is Ownable, ERC721A {
     refundIfOver(PRICE_PUBLIC * quantity);
   }
 
-  function setStepAsBefore() external onlyOwner {
-    sellingStep = Step.Before;
+  function setStepAsInactive() external onlyOwner {
+    sellingStep = Step.Inactive;
   }
 
   function setStepAsWhitelistSale() external onlyOwner {
@@ -93,10 +93,6 @@ contract TheShmurfs is Ownable, ERC721A {
 
   function setStepAsPublicSale() external onlyOwner {
     sellingStep = Step.PublicSale;
-  }
-
-  function setStepAsAfter() external onlyOwner {
-    sellingStep = Step.After;
   }
 
   // metadata URI
@@ -152,8 +148,7 @@ contract TheShmurfs is Ownable, ERC721A {
   }
 
   function getPrice() public view returns (uint) {
-    require(sellingStep != Step.Before, "Sale not started yet");
-    require(sellingStep != Step.After, "Sale ended");
+    require(sellingStep != Step.Inactive, "Sale not activated");
     if (sellingStep == Step.PublicSale)
       return PRICE_PUBLIC;
     else
