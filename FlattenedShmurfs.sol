@@ -1275,9 +1275,7 @@ contract ERC721A is Context, ERC165, IERC721, IERC721Metadata {
 }
 
 // File: contracts\TheShmurfs.sol
-
 pragma solidity ^0.8.4;
-
 
 contract TheShmurfs is Ownable, ERC721A {
 
@@ -1293,7 +1291,7 @@ contract TheShmurfs is Ownable, ERC721A {
   string private unrevealedImageURL;
   bool private revealed;
 
-  uint private constant MAX_SUPPLY          = 1000;
+  uint private MAX_SUPPLY          = 1000;
   uint private constant PRICE_WHITELIST     = 0.08 ether;
   uint private constant PRICE_PUBLIC        = 0.09 ether;
   uint private constant MAX_WHITELIST_BATCH = 3;
@@ -1356,6 +1354,10 @@ contract TheShmurfs is Ownable, ERC721A {
     sellingStep = Step.PublicSale;
   }
 
+  function setMaxSupply(uint max_) external onlyOwner {
+    MAX_SUPPLY = max_;
+  }
+  
   // metadata URI
   function setUnrevealedImageURL(string calldata _imageURL) external onlyOwner {
     unrevealedImageURL = _imageURL;
