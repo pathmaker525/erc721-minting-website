@@ -1262,13 +1262,17 @@ contract ERC721A is Context, ERC165, IERC721, IERC721Metadata {
 
 // File: contracts\TheShmurfs.sol
 
-
-//  ████████╗██╗  ██╗███████╗    ███████╗██╗  ██╗███╗   ███╗██╗   ██╗██████╗ ███████╗███████╗
-//  ╚══██╔══╝██║  ██║██╔════╝    ██╔════╝██║  ██║████╗ ████║██║   ██║██╔══██╗██╔════╝██╔════╝
-//     ██║   ███████║█████╗      ███████╗███████║██╔████╔██║██║   ██║██████╔╝█████╗  ███████╗
-//     ██║   ██╔══██║██╔══╝      ╚════██║██╔══██║██║╚██╔╝██║██║   ██║██╔══██╗██╔══╝  ╚════██║
-//     ██║   ██║  ██║███████╗    ███████║██║  ██║██║ ╚═╝ ██║╚██████╔╝██║  ██║██║     ███████║
-//     ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚══════╝
+//   /$$$$$$$$ /$$                        /$$$$$$  /$$                                          /$$$$$$                 /$$$$$$   /$$$$$$   /$$$$$$  /$$           /$$           /$$        /$$$$$$            /$$ /$$                       /$$     /$$                    
+//  |__  $$__/| $$                       /$$__  $$| $$                                         /$$__  $$               /$$__  $$ /$$__  $$ /$$__  $$|__/          |__/          | $$       /$$__  $$          | $$| $$                      | $$    |__/                    
+//     | $$   | $$$$$$$   /$$$$$$       | $$  \__/| $$$$$$$  /$$$$$$/$$$$  /$$   /$$  /$$$$$$ | $$  \__//$$$$$$$      | $$  \ $$| $$  \__/| $$  \__/ /$$  /$$$$$$$ /$$  /$$$$$$ | $$      | $$  \__/  /$$$$$$ | $$| $$  /$$$$$$   /$$$$$$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$ 
+//     | $$   | $$__  $$ /$$__  $$      |  $$$$$$ | $$__  $$| $$_  $$_  $$| $$  | $$ /$$__  $$| $$$$   /$$_____/      | $$  | $$| $$$$    | $$$$    | $$ /$$_____/| $$ |____  $$| $$      | $$       /$$__  $$| $$| $$ /$$__  $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$__  $$
+//     | $$   | $$  \ $$| $$$$$$$$       \____  $$| $$  \ $$| $$ \ $$ \ $$| $$  | $$| $$  \__/| $$_/  |  $$$$$$       | $$  | $$| $$_/    | $$_/    | $$| $$      | $$  /$$$$$$$| $$      | $$      | $$  \ $$| $$| $$| $$$$$$$$| $$        | $$    | $$| $$  \ $$| $$  \ $$
+//     | $$   | $$  | $$| $$_____/       /$$  \ $$| $$  | $$| $$ | $$ | $$| $$  | $$| $$      | $$     \____  $$      | $$  | $$| $$      | $$      | $$| $$      | $$ /$$__  $$| $$      | $$    $$| $$  | $$| $$| $$| $$_____/| $$        | $$ /$$| $$| $$  | $$| $$  | $$
+//     | $$   | $$  | $$|  $$$$$$$      |  $$$$$$/| $$  | $$| $$ | $$ | $$|  $$$$$$/| $$      | $$     /$$$$$$$/      |  $$$$$$/| $$      | $$      | $$|  $$$$$$$| $$|  $$$$$$$| $$      |  $$$$$$/|  $$$$$$/| $$| $$|  $$$$$$$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$
+//     |__/   |__/  |__/ \_______/       \______/ |__/  |__/|__/ |__/ |__/ \______/ |__/      |__/    |_______/        \______/ |__/      |__/      |__/ \_______/|__/ \_______/|__/       \______/  \______/ |__/|__/ \_______/ \_______/   \___/  |__/ \______/ |__/  |__/
+//                                                                                                                                                                                                                                                                          
+//                                                                                                                                                                                                                                                                          
+//                                                                                                                                                                                                                                                                          
 
 pragma solidity ^0.8.4;
 
@@ -1293,17 +1297,14 @@ contract TheShmurfs is Ownable, ERC721A {
   uint private constant PRICE_PUBLIC        = 0.09 ether;
   uint private constant MAX_WHITELIST_BATCH = 3;
 
-  address private fundWallet    = payable(0xc7f9aDaec08aBB1ac05d8f8Fd6015A0912b43392); // Owner Fund Wallet Address
+  address private fundWallet    = payable(0xe8a18cD415e54A99FCd2d89F52434dd8259926fb); // Owner Fund Wallet Address
   address private devOneWallet  = payable(0xbC937543371F759867acf29A3391dEecF12f3d76); // Developer One Wallet Address
-
-  bytes32 private whitelistMintPassKey;
 
   mapping(address => uint8) private whitelistBuyList;
 
-  constructor() ERC721A("The Shmurfs", "SHMURFS") {
+  constructor() ERC721A("The Shmurfs Official Collection", "SHMURFS") {
     sellingStep = Step.Before;
     revealed = false;
-    whitelistMintPassKey = getHash("0");
   }
 
   modifier callerIsUser() {
@@ -1321,8 +1322,7 @@ contract TheShmurfs is Ownable, ERC721A {
     _;
   }
 
-  function whitelistMint(uint8 quantity, string calldata mintPasskey_) external payable callerIsUser whitelistSaleIsOpen {
-    require(whitelistMintPassKey == getHash(mintPasskey_), "WHITELIST_SALE: Passkey not correct");
+  function whitelistMint(uint8 quantity) external payable callerIsUser whitelistSaleIsOpen {
     require(totalSupply() < MAX_SUPPLY, "WHITELIST_SALE: Please go to the Opensea to buy The Shmurfs.");
     require(totalSupply() + quantity <= MAX_SUPPLY, "WHITELIST_SALE: Max supply exceeded");
     require(whitelistBuyList[msg.sender] + quantity <= MAX_WHITELIST_BATCH, "WHITELIST_SALE: You can not get more than 3 NFTs on the Whitelist Sale");
@@ -1341,10 +1341,6 @@ contract TheShmurfs is Ownable, ERC721A {
 
     _safeMint(msg.sender, quantity);
     refundIfOver(PRICE_PUBLIC * quantity);
-  }
-
-  function setWhitelistMintPassKey(bytes32 mintPasskey_) external onlyOwner {
-    whitelistMintPassKey = mintPasskey_;
   }
 
   function setStepAsBefore() external onlyOwner {
@@ -1422,10 +1418,5 @@ contract TheShmurfs is Ownable, ERC721A {
       return PRICE_PUBLIC;
     else
       return PRICE_WHITELIST;
-  }
-
-  // Security for whitelist
-  function getHash(string memory _string) public pure returns(bytes32) {
-     return keccak256(abi.encodePacked(_string));
   }
 }
