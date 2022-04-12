@@ -1291,7 +1291,7 @@ contract TheShmurfs is Ownable, ERC721A {
   string private unrevealedImageURL;
   bool private revealed;
 
-  uint private MAX_SUPPLY          = 1000;
+  uint public MAX_SUPPLY          = 1000;
   uint private constant PRICE_WHITELIST     = 0.08 ether;
   uint private constant PRICE_PUBLIC        = 0.09 ether;
   uint private constant MAX_WHITELIST_BATCH = 3;
