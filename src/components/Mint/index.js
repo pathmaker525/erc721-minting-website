@@ -7,7 +7,6 @@ import "./style.scss"
 const Mint = ({
   account,
   mintCount,
-  // ticker,
   mintPrice,
   walletConfig,
   connector,

@@ -2,20 +2,6 @@ import { ethers } from "ethers"
 import { getTheShmurfsContract } from "./GetContractInstances"
 import { getProviderOrSigner } from "utils/index"
 
-// Get Current Total Supply from the Contract
-// export const getCurrentTotalSupply = async (library, account) => {
-//   const contract = getTheShmurfsContract(
-//     getProviderOrSigner(library, account)
-//   )
-
-//   try {
-//     let totalSupply = await contract.totalSupply()
-
-//     return ethers.BigNumber.from(totalSupply).toNumber()
-//   } catch (err) {
-//     return 0
-//   }
-// }
 
 // Get Max Supply from the Contract
 export const getMaxSupply = async (library, account) => {

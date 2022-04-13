@@ -7,7 +7,6 @@ import "./style.scss"
 const WLMint = ({
   account,
   mintCount,
-  // ticker,
   mintPrice,
   walletConfig,
   connector,
@@ -32,19 +31,6 @@ const WLMint = ({
               )}...${account.slice(-4)}`}</span>
             </div>
             <h3>Welcome to whitelist mint</h3>
-            {/* <span className="mint-ticker">
-              {ticker < 500
-                ? "😎 Go Go Go Fam 😎"
-                : ticker < 1500
-                ? "🔥 Minting in Process 🔥"
-                : ticker < 2500
-                ? "😍 Many Minted 😍"
-                : ticker < 3353
-                ? "😱 Almost there Fam 😱"
-                : ticker === 3353
-                ? "🎉 Sold out! 🎉"
-                : "🤔 Unknown Status 🤔"}
-            </span> */}
             <span className="mint-price">
               {(mintPrice * mintCount) / 10000} ETH
             </span>

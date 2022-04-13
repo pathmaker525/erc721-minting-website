@@ -1,8 +1,6 @@
 import {
   SiTwitter,
-  // SiInstagram,
   SiDiscord,
-  // SiMedium
 } from "react-icons/si"
 import SocialLinks from "constants/Ui/SocialLinks"
 
@@ -22,15 +20,6 @@ const Footer = () => (
         >
           <SiTwitter />
         </a>
-        {/* <a
-          className="flex"
-          href={SocialLinks.Instagram}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="twitter"
-        >
-          <SiInstagram />
-        </a> */}
         <a
           className="flex"
           href={SocialLinks.Discord}
@@ -40,15 +29,6 @@ const Footer = () => (
         >
           <SiDiscord />
         </a>
-        {/* <a
-          className="flex"
-          href={SocialLinks.Medium}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="twitter"
-        >
-          <SiMedium />
-        </a> */}
       </div>
     </div>
   </div>

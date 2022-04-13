@@ -22,7 +22,6 @@ const AppRouters = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
       <UseScrollToTop>{routes}</UseScrollToTop>
       <Footer />
     </>
