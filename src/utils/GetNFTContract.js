@@ -125,16 +125,18 @@ export const mintNFT = async (
   )
 
   try {
-    if (isPublic)
-      var txhash = await contract.publicSaleMint(mintCount, {
+    var txhash
+    if (isPublic) {
+       txhash= await contract.publicSaleMint(mintCount, {
         value: ethers.BigNumber.from(price).mul(1e14).mul(mintCount),
         from: account,
       })
-    else
-      var txhash = await contract.whitelistMint(mintCount, {
+    } else {
+      txhash = await contract.whitelistMint(mintCount, {
         value: ethers.BigNumber.from(price).mul(1e14).mul(mintCount),
         from: account,
       })
+    }
       
 
     alertInfo("Tx Submitted")
