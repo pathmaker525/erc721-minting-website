@@ -1,12 +1,12 @@
 import { LogoImage } from "resources/Images"
-import { GiSun } from "react-icons/gi"
+import { AiOutlineLoading3Quarters } from "react-icons/ai"
 
 import "./style.scss"
 
 const Loading = () => (
   <div className="loading flex">
     <div className="loading-wrapper container flex flex-column">
-      <GiSun />
+      <AiOutlineLoading3Quarters />
       <img src={LogoImage} alt="logo" />
     </div>
   </div>
