@@ -66,7 +66,6 @@ const Mint = () => {
 
   const onMint = async () => {
     if (txStatus !== "Pending" && !!account) {
-
       await mintNFT(
         library,
         account,

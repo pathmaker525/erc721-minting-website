@@ -105,10 +105,6 @@ export const mintNFT = async (
   )
 
   let price = await getPrice(library, account)
-  console.log(
-    ethers.BigNumber.from(price).mul(1e14).mul(mintCount).toString(),
-    mintCount
-  )
 
   try {
     var txhash

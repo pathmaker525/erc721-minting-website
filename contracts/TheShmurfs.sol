@@ -9,7 +9,8 @@
 //     | $$   | $$  | $$|  $$$$$$$      |  $$$$$$/| $$  | $$| $$ | $$ | $$|  $$$$$$/| $$      | $$     /$$$$$$$/      |  $$$$$$/| $$      | $$      | $$|  $$$$$$$| $$|  $$$$$$$| $$      |  $$$$$$/|  $$$$$$/| $$| $$|  $$$$$$$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$
 //     |__/   |__/  |__/ \_______/       \______/ |__/  |__/|__/ |__/ |__/ \______/ |__/      |__/    |_______/        \______/ |__/      |__/      |__/ \_______/|__/ \_______/|__/       \______/  \______/ |__/|__/ \_______/ \_______/   \___/  |__/ \______/ |__/  |__/
 //
-//    The Shmurfs are a collection of 1,000, 3D amazing PFP NFT's that offer real long term value
+//    The Shmurfs are a collection of 1,000, 3D amazing PFP NFT's that offer real long term value!
+//    This value proposition includes merchandise, Tokenomics and series 2 value by way of our $SHMURF Tokens and much more! 
 //
 //
 

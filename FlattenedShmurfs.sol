@@ -8,8 +8,8 @@
 //     | $$   | $$  | $$|  $$$$$$$      |  $$$$$$/| $$  | $$| $$ | $$ | $$|  $$$$$$/| $$      | $$     /$$$$$$$/      |  $$$$$$/| $$      | $$      | $$|  $$$$$$$| $$|  $$$$$$$| $$      |  $$$$$$/|  $$$$$$/| $$| $$|  $$$$$$$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$
 //     |__/   |__/  |__/ \_______/       \______/ |__/  |__/|__/ |__/ |__/ \______/ |__/      |__/    |_______/        \______/ |__/      |__/      |__/ \_______/|__/ \_______/|__/       \______/  \______/ |__/|__/ \_______/ \_______/   \___/  |__/ \______/ |__/  |__/
 //
-//    The Shmurfs are a collection of 1,000, 3D amazing PFP NFT's that offer real long term value
-//
+//    The Shmurfs are a collection of 1,000, 3D amazing PFP NFT's that offer real long term value!
+//    This value proposition includes merchandise, Tokenomics and series 2 value by way of our $SHMURF Tokens and much more! 
 //
 
 // File: @openzeppelin\contracts\utils\Context.sol
@@ -753,7 +753,7 @@ contract ERC721A is Context, ERC165, IERC721, IERC721Metadata {
     /**
      * @dev Burned tokens are calculated here, use _totalMinted() if you want to count just minted tokens.
      */
-    function totalSupply() internal view returns (uint256) {
+    function totalSupply() public view returns (uint256) {
         // Counter underflow is impossible as _burnCounter cannot be incremented
         // more than _currentIndex - _startTokenId() times
         unchecked {
@@ -1275,6 +1275,7 @@ contract ERC721A is Context, ERC165, IERC721, IERC721Metadata {
 }
 
 // File: contracts\TheShmurfs.sol
+
 pragma solidity ^0.8.4;
 
 contract TheShmurfs is Ownable, ERC721A {
