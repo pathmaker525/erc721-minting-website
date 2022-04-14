@@ -6,7 +6,6 @@ import { useAlert } from "react-alert"
 import connectors from "configs/Wallets"
 
 import {
-  getPrice,
   mintNFT
 } from "utils/GetNFTContract"
 
@@ -21,7 +20,7 @@ const WLMint = () => {
   const [txStatus, setTxStatus] = useState("")
 
   const [maxMint] = useState(3)
-  const [mintPrice, setMintPrice] = useState(0)
+  const [mintPrice] = useState(0)
 
   useEffect(() => {
     const fetchData = async () => {
