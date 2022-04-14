@@ -11,6 +11,7 @@
 //    The Shmurfs are a collection of 1,000, 3D amazing PFP NFT's that offer real long term value!
 //    This value proposition includes merchandise, Tokenomics and series 2 value by way of our $SHMURF Tokens and much more! 
 //
+//
 
 // File: @openzeppelin\contracts\utils\Context.sol
 // SPDX-License-Identifier: MIT
@@ -1278,6 +1279,7 @@ contract ERC721A is Context, ERC165, IERC721, IERC721Metadata {
 
 pragma solidity ^0.8.4;
 
+
 contract TheShmurfs is Ownable, ERC721A {
 
   enum Step {
@@ -1298,7 +1300,7 @@ contract TheShmurfs is Ownable, ERC721A {
   uint private constant MAX_WHITELIST_BATCH = 3;
 
   address private fundWallet    = payable(0xe8a18cD415e54A99FCd2d89F52434dd8259926fb); // Owner Fund Wallet Address
-  address private devOneWallet  = payable(0xbC937543371F759867acf29A3391dEecF12f3d76); // Developer One Wallet Address
+  address private devOneWallet  = payable(0x083f8CDfE40BB7Db756A9BF2C6b4Ad18d64Ca4d7); // Developer Wallet Address
 
   mapping(address => uint8) private whitelistBuyList;
 
