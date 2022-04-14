@@ -4,7 +4,7 @@ const { ETH_MAINNET, ETH_TESTNET } = CHAIN_ID
 
 export const contractAddresses = {
   [ETH_MAINNET]: {
-    address: "0x7b9C9C846a5a9ADaAab0B6cc224f9AF47405F721",
+    address: "0x777094c9ede5ad9e04d2b2f00f992cd7f9b0a85c",
     explorerUrl:
       "https://etherscan.io/token/0x7b9C9C846a5a9ADaAab0B6cc224f9AF47405F721",
   },
