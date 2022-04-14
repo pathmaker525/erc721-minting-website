@@ -1,6 +1,6 @@
 export const AppRoutes = {
-  DASHBOARD: "/",
-  WLMINT: '/wl',
+  WLMINT: "/",
+  // WLMINT: '/wl',
   COMING_SOON: "/coming-soon",
   NOT_FOUND: "*",
 }
