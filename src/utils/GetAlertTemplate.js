@@ -8,7 +8,7 @@ import {
 
 export const alertOptions = {
   position: positions.BOTTOM_RIGHT,
-  timeout: 3000,
+  timeout: 6000,
   offset: "0 12px 12px 0",
   transition: transitions.SCALE,
 }
